@@ -9,7 +9,6 @@ public class MovimientoEnemigo : MonoBehaviour
     [SerializeField] private float distancia;
     [SerializeField] private bool movimientoDerecha;
     [SerializeField] private Transform controladorSuelo;
-    [SerializeField] RaycastHit2D informacionSuelo;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -21,18 +20,19 @@ public class MovimientoEnemigo : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        informacionSuelo = Physics2D.Raycast(controladorSuelo.position, Vector2.down, distancia);
+        RaycastHit2D informacionSuelo = Physics2D.Raycast(controladorSuelo.position, Vector2.down, distancia);
+        Debug.Log(mensaje);
         rb.velocity = new Vector2(velocidad, rb.velocity.y);
 
-        if (!informacionSuelo) {
-            //Girar();
+        if (informacionSuelo == false) {
+            Girar();
         }
     }
 
 
     private void Girar() {
         movimientoDerecha = !movimientoDerecha;
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 108, 0);
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
         velocidad *= -1;
     }
 
