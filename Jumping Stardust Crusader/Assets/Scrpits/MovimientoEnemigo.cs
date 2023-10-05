@@ -21,7 +21,6 @@ public class MovimientoEnemigo : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit2D informacionSuelo = Physics2D.Raycast(controladorSuelo.position, Vector2.down, distancia);
-        Debug.Log(mensaje);
         rb.velocity = new Vector2(velocidad, rb.velocity.y);
 
         if (informacionSuelo == false) {
