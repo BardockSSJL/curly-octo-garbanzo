@@ -483,7 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radioGolpe: 0.5
   controladorGolpe: {fileID: 58099667}
-  dannoGolpe: 0
+  dannoGolpe: 20
 --- !u!1 &1294961857
 GameObject:
   m_ObjectHideFlags: 0
