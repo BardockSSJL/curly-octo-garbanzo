@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DashEstado : PlayerState {
+    public DashEstado(Jugador jugador, EnemyStateMachine maquinaEstado) : base(jugador, maquinaEstado) {}
+
+    public override void EntrarEstado() {
+        base.EntrarEstado();
+        
+    }
+
+    public override void SalirEstado() {
+        base.SalirEstado();
+        
+    }
+
+    public override void ActualizarCuadro() {
+        base.ActualizarCuadro();
+        
+    }
+
+    public override void ActualizarFisica() {
+        base.ActualizarFisica();
+    }
+}
