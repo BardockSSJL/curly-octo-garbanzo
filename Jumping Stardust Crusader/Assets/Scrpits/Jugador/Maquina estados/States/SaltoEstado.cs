@@ -19,19 +19,17 @@ public class SaltoEstado : PlayerState {
     public override void ActualizarCuadro() {
         base.ActualizarCuadro();
         
-        if(Input.GetButtonDown("Jump")){
-            salto = true;
-        }
-
     }
 
     public override void ActualizarFisica() {
         base.ActualizarFisica();
         jugador.enSuelo = Physics2D.OverlapBox(jugador.controlSuelo.position, jugador.dimensionesCaja, 0f, jugador.queEsSuelo);
         jugador.animator.SetBool("enSuelo",jugador.enSuelo);
-        Salto(salto);
-
-        salto = false;
+        if(Input.GetKeyDown(KeyCode.B)){
+            salto = true;
+            Salto(salto);
+            salto = false;
+        }
     }
 
     private void Salto (bool saltar) {
