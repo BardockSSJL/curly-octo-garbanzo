@@ -8,6 +8,7 @@ public class SaltoEstado : PlayerState {
      private bool salto = false;
     public override void EntrarEstado() {
         base.EntrarEstado();
+        Debug.Log("Salto entrando");
         jugador.animator.SetBool("enSuelo",jugador.enSuelo); 
     }
 
@@ -18,21 +19,25 @@ public class SaltoEstado : PlayerState {
 
     public override void ActualizarCuadro() {
         base.ActualizarCuadro();
-        
+        jugador.enSuelo = Physics2D.OverlapBox(jugador.controlSuelo.position, jugador.dimensionesCaja, 0f, jugador.queEsSuelo);
+        jugador.animator.SetBool("enSuelo",jugador.enSuelo);
+        Debug.Log("Salto precionado");
+        if(Input.GetKeyDown(KeyCode.W)){
+            
+            salto = true;
+        }
     }
 
     public override void ActualizarFisica() {
         base.ActualizarFisica();
-        jugador.enSuelo = Physics2D.OverlapBox(jugador.controlSuelo.position, jugador.dimensionesCaja, 0f, jugador.queEsSuelo);
-        jugador.animator.SetBool("enSuelo",jugador.enSuelo);
-        if(Input.GetKeyDown(KeyCode.B)){
-            salto = true;
+        if (salto) {
             Salto(salto);
             salto = false;
         }
     }
 
     private void Salto (bool saltar) {
+         Debug.Log("Salto llamado");
         if(jugador.enSuelo && saltar) {
           jugador.enSuelo = false;
           jugador.RB.AddForce(new Vector2(0f, fuerzaSalto));
