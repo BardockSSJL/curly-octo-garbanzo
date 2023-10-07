@@ -10,8 +10,6 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
 	[field: SerializeField] public float velocidadPersecucion{ get; set; }
 	
-	[field: SerializeField] public Transform controladorSuelo { get; set; }
-	[field: SerializeField] public float distanciaAlSuelo { get; set; }
 	
 	public GameObject jugador {get; set; }
 
@@ -21,6 +19,13 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
 	public bool EstadoAggro {get; set; }
     public bool EnRango { get; set; }
+
+	#region controlador suelo
+	[field: SerializeField] public Transform controladorSuelo { get; set; }
+	[field: SerializeField] public float distanciaAlSuelo { get; set; }
+
+
+	#endregion
 
 	#region VariablesMaquinaEstado
 	public EnemyStateMachine MaquinaEstado { get; set; }
