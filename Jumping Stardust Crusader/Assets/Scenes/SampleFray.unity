@@ -1341,7 +1341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184364498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.76, y: 12.29, z: 0}
+  m_LocalPosition: {x: 2.07, y: 8.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1923,6 +1923,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <vidaMaxima>k__BackingField: 100
   <vidaActual>k__BackingField: 0
+  <velocidadPersecucion>k__BackingField: 4
+  <controladorSuelo>k__BackingField: {fileID: 249882888}
+  <distanciaAlSuelo>k__BackingField: 1.2
 --- !u!1 &956429680
 GameObject:
   m_ObjectHideFlags: 0

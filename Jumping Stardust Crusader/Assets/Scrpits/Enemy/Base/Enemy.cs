@@ -8,9 +8,16 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
 	[field: SerializeField] public float vidaActual{ get; set; }
 
+	[field: SerializeField] public float velocidadPersecucion{ get; set; }
+	
+	[field: SerializeField] public Transform controladorSuelo { get; set; }
+	[field: SerializeField] public float distanciaAlSuelo { get; set; }
+	
+	public GameObject jugador {get; set; }
+
 	public Rigidbody2D RB { get; set; }
 
-    public bool viendoDerecha { get; set; }
+    public bool viendoDerecha { get; set; } = true;
 
 	public bool EstadoAggro {get; set; }
     public bool EnRango { get; set; }
@@ -22,11 +29,13 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 	public EnemyAttackState EstadoAtaque {	get; set; }
 	#endregion
 
+
 	private void Awake() {
 		MaquinaEstado = new EnemyStateMachine();
 		EstadoEspera = new EnemyIdleState(this, MaquinaEstado);
 		EstadoPersecucion = new EnemyChaseState(this, MaquinaEstado);
 		EstadoAtaque = new EnemyAttackState(this, MaquinaEstado);
+		jugador = GameObject.FindGameObjectWithTag("Jugador");
 	}
 	
 	private void Start() {
