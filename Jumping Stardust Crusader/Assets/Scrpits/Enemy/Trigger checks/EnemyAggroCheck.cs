@@ -15,12 +15,14 @@ public class EnemyAggroCheck : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D colision) {
         if (colision.gameObject == JugadorObjetivo) {
             _enemy.SetEstadoAggro(true);
+            Debug.Log("Golpear");
         }
     }
 
     private void OnTriggerExit2D(Collider2D colision) {
         if (colision.gameObject == JugadorObjetivo) {
             _enemy.SetEstadoAggro(false);
+            Debug.Log("Perseguir");
         }
     }
 }
