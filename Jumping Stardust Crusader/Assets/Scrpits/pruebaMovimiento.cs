@@ -17,8 +17,8 @@ public class pruebaMovimiento : MonoBehaviour
   [SerializeField] private float fuerzaSalto;
   [SerializeField] private LayerMask queEsSuelo;
   [SerializeField] private Transform controlSuelo;
-  [SerializeField] private Vector3 dimensionesCaja;
-  [SerializeField] private bool enSuelo;
+[SerializeField] private Vector3 dimensionesCaja;
+  [SerializeField] private bool enSuelo = false;
   private bool salto = false;
 
   [Header("Dash")]

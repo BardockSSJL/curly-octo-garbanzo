@@ -8,17 +8,24 @@ public class IdleEstado : PlayerState {
 
     public override void EntrarEstado() {
         base.EntrarEstado();
-        jugador.animator.SetBool("Idle", true);
     }
 
     public override void SalirEstado() {
         base.SalirEstado();
-        jugador.animator.SetBool("Idle", false);
     }
 
     public override void ActualizarCuadro() {
+        jugador.movimientoHorizontal = Input.GetAxisRaw("Horizontal") * jugador.velocidadMovimiento;
+        jugador.enSuelo = Physics2D.OverlapBox(jugador.controlSuelo.position, jugador.dimensionesCaja, 0f, jugador.queEsSuelo);
+        jugador.animator.SetBool("enSuelo",jugador.enSuelo);
+        if(jugador.movimientoHorizontal != 0){
+            jugador.MaquinaEstado.cambiarEstado(jugador.movimientoEstado);
+        }
+        if(Input.GetKeyDown(KeyCode.W)){
+            jugador.salto = true;
+            jugador.MaquinaEstado.cambiarEstado(jugador.saltoEstado);
+        }
         base.ActualizarCuadro();
-        
     }
 
     public override void ActualizarFisica() {

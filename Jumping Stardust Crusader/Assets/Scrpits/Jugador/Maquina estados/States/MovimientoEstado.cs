@@ -3,47 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovimientoEstado : PlayerState {
-
-    private float movimientoHorizontal = 0f;
-    private float velocidadMovimiento = 400;
     private float suavizadoMovimiento = 0.3f;
     private Vector3 velocidad = Vector3.zero;
     private bool mirandoDerecha = true;
-    private float fuerzaSalto = 400f;
-     private bool salto = false;
     public MovimientoEstado(Jugador jugador, PlayerStateMachine maquinaEstado) : base(jugador, maquinaEstado) {}
 
     public override void EntrarEstado() {
         base.EntrarEstado();
         Debug.Log("movimiento entrando");
-        jugador.animator.SetFloat("Horizontal",Mathf.Abs(movimientoHorizontal));
     }
 
     public override void SalirEstado() {
         base.SalirEstado();
         Debug.Log("movimiento saliendo");
-        jugador.animator.SetFloat("Horizontal",Mathf.Abs(0));
        
     }
 
     public override void ActualizarCuadro() {
-        movimientoHorizontal = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
-        jugador.animator.SetFloat("Horizontal",Mathf.Abs(movimientoHorizontal));
+        jugador.movimientoHorizontal = Input.GetAxisRaw("Horizontal") * jugador.velocidadMovimiento;
+        jugador.animator.SetFloat("Horizontal",Mathf.Abs(jugador.movimientoHorizontal));
+        jugador.enSuelo = Physics2D.OverlapBox(jugador.controlSuelo.position, jugador.dimensionesCaja, 0f, jugador.queEsSuelo);
+        jugador.animator.SetBool("enSuelo",jugador.enSuelo);
         if(Input.GetKeyDown(KeyCode.W)){
-            salto = true;
+            jugador.salto = true;
+            jugador.MaquinaEstado.cambiarEstado(jugador.saltoEstado);
         }
-        base.ActualizarFisica();
+        base.ActualizarCuadro();
     }
 
     public override void ActualizarFisica() {
-        jugador.enSuelo = Physics2D.OverlapBox(jugador.controlSuelo.position, jugador.dimensionesCaja, 0f, jugador.queEsSuelo);
-        jugador.animator.SetBool("enSuelo",jugador.enSuelo);
-        if(salto == true || movimientoHorizontal != 0){
-            Mover(movimientoHorizontal * Time.fixedDeltaTime, salto);
+        if(jugador.movimientoHorizontal != 0){
+            Mover(jugador.movimientoHorizontal * Time.fixedDeltaTime);
+        } else{
+            jugador.MaquinaEstado.cambiarEstado(jugador.idleEstado);
         }
-        
-
-        salto = false;
+        base.ActualizarFisica();
     }
 
     private void Girar() {
@@ -53,7 +47,7 @@ public class MovimientoEstado : PlayerState {
         jugador.transform.localScale = escala;
     }
 
-    private void Mover(float mover, bool saltar) {
+    private void Mover(float mover) {
         Debug.Log("movimiendo");
         Vector3 velocidadObjetivo = new Vector2(mover,jugador.RB.velocity.y);
         jugador.RB.velocity = Vector3.SmoothDamp(jugador.RB.velocity, velocidadObjetivo, ref velocidad, suavizadoMovimiento);
@@ -62,9 +56,5 @@ public class MovimientoEstado : PlayerState {
         }else if(mover < 0 && mirandoDerecha) {
             Girar();
         }
-        if(jugador.enSuelo && saltar) {
-          jugador.enSuelo = false;
-          jugador.RB.AddForce(new Vector2(0f, fuerzaSalto));
-      }
   }
 }

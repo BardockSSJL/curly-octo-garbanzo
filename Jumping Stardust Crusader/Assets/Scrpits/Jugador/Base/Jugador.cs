@@ -8,10 +8,17 @@ public class Jugador : MonoBehaviour
 
 	[field: SerializeField] public float vidaActual{ get; set; }
 
-	[field: SerializeField] public LayerMask queEsSuelo;
-	[SerializeField] public Transform controlSuelo;
-	[SerializeField] public Vector3 dimensionesCaja;
-    [SerializeField] public bool enSuelo;
+	[field: SerializeField] public LayerMask queEsSuelo{ get; set; }
+
+	[field:SerializeField] public Transform controlSuelo{ get; set; }
+
+	[field:SerializeField] public Vector3 dimensionesCaja{ get; set; }
+
+    [SerializeField] public bool enSuelo{ get; set; }
+
+	public float movimientoHorizontal = 0f;
+
+	public float velocidadMovimiento = 400;
 
 	public Rigidbody2D RB { get; set; }
 
@@ -20,13 +27,24 @@ public class Jugador : MonoBehaviour
 	public bool SePuedeMover { get; set; } = true;
 
     public PlayerStateMachine MaquinaEstado { get; set; }
+
     public MovimientoEstado movimientoEstado {get; set; }
+
+	public SaltoEstado saltoEstado {get; set; }
+
+	public IdleEstado idleEstado {get; set; }
+
+	public float fuerzaSalto = 400f;
+
+    public bool salto = false;
 
 	public Animator animator;
 
     private void Awake() {
 		MaquinaEstado = new PlayerStateMachine();
 		movimientoEstado = new MovimientoEstado(this, MaquinaEstado);
+		saltoEstado = new SaltoEstado(this, MaquinaEstado);
+		idleEstado = new IdleEstado(this, MaquinaEstado);
 		animator = GetComponent<Animator>();
 		
 	}
