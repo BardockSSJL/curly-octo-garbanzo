@@ -38,12 +38,12 @@ public class SaltoEstado : PlayerState {
         if(jugador.movimientoHorizontal == 0){
             jugador.MaquinaEstado.cambiarEstado(jugador.idleEstado);
         }
+        if(Input.GetKeyDown(KeyCode.F) && jugador.puedeHacerDash) {
+           jugador.MaquinaEstado.cambiarEstado(jugador.dashEstado);
+        }
     }
 
     private void Salto (bool saltar) {
-        Debug.Log(jugador.enSuelo);
-        Debug.Log(saltar);
-
         if(jugador.enSuelo && saltar) {
             jugador.enSuelo = false;
             jugador.RB.AddForce(new Vector2(0f, jugador.fuerzaSalto));

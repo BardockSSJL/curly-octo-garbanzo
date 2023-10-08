@@ -14,6 +14,15 @@ public class Jugador : MonoBehaviour
 
 	[field:SerializeField] public Vector3 dimensionesCaja{ get; set; }
 
+	[field:SerializeField] public float velocidadDash{ get; set; }
+
+    [field:SerializeField] public float tiempoDash{ get; set; }
+
+    [field:SerializeField] public TrailRenderer trailRenderer{ get; set; }
+
+	[field:SerializeField] public float gravedadinicial { get; set; }
+	public bool puedeHacerDash = true;
+
     [SerializeField] public bool enSuelo{ get; set; }
 
 	public float movimientoHorizontal = 0f;
@@ -24,7 +33,7 @@ public class Jugador : MonoBehaviour
 
     public bool viendoDerecha { get; set; }
 
-	public bool SePuedeMover { get; set; } = true;
+	public bool sePuedeMover { get; set; } = true;
 
     public PlayerStateMachine MaquinaEstado { get; set; }
 
@@ -33,6 +42,7 @@ public class Jugador : MonoBehaviour
 	public SaltoEstado saltoEstado {get; set; }
 
 	public IdleEstado idleEstado {get; set; }
+	public DashEstado dashEstado {get; set; }
 
 	public float fuerzaSalto = 400f;
 
@@ -45,6 +55,7 @@ public class Jugador : MonoBehaviour
 		movimientoEstado = new MovimientoEstado(this, MaquinaEstado);
 		saltoEstado = new SaltoEstado(this, MaquinaEstado);
 		idleEstado = new IdleEstado(this, MaquinaEstado);
+		dashEstado = new DashEstado(this, MaquinaEstado);
 		animator = GetComponent<Animator>();
 		
 	}

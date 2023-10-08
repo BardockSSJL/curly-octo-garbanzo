@@ -178,12 +178,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <vidaMaxima>k__BackingField: 100
   <vidaActual>k__BackingField: 0
-  queEsSuelo:
+  <queEsSuelo>k__BackingField:
     serializedVersion: 2
-    m_Bits: 1
-  controlSuelo: {fileID: 0}
-  dimensionesCaja: {x: 1, y: 1, z: 1}
-  enSuelo: 1
+    m_Bits: 64
+  <controlSuelo>k__BackingField: {fileID: 777402281}
+  <dimensionesCaja>k__BackingField: {x: 1, y: 0.25, z: 0}
+  <velocidadDash>k__BackingField: 400
+  <tiempoDash>k__BackingField: 5
+  <trailRenderer>k__BackingField: {fileID: 0}
+  <gravedadinicial>k__BackingField: 0
+  puedeHacerDash: 1
+  movimientoHorizontal: 0
+  velocidadMovimiento: 400
+  fuerzaSalto: 400
+  salto: 0
   animator: {fileID: 41878590}
 --- !u!50 &41878592
 Rigidbody2D:
@@ -200,7 +208,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -282,10 +290,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41878589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.36, y: -1.54, z: 0}
+  m_LocalPosition: {x: -5.07, y: 2.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 777402281}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -318,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80284128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1555,7 +1564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491650240}
   - component: {fileID: 491650239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,6 +1937,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba379c7ecc740e488c908d308bc7f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &777402280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777402281}
+  m_Layer: 0
+  m_Name: controlSuelo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777402281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777402280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 41878595}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &920210582
 GameObject:
   m_ObjectHideFlags: 0

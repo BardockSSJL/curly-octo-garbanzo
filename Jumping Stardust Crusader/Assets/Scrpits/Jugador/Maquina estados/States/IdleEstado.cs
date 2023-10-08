@@ -8,10 +8,12 @@ public class IdleEstado : PlayerState {
 
     public override void EntrarEstado() {
         base.EntrarEstado();
+        Debug.Log("idle entrando");
     }
 
     public override void SalirEstado() {
         base.SalirEstado();
+        Debug.Log("idle saliendo");
     }
 
     public override void ActualizarCuadro() {
@@ -24,6 +26,9 @@ public class IdleEstado : PlayerState {
         if(Input.GetKeyDown(KeyCode.W)){
             jugador.salto = true;
             jugador.MaquinaEstado.cambiarEstado(jugador.saltoEstado);
+        }
+        if(Input.GetKeyDown(KeyCode.F) ) {
+           jugador.MaquinaEstado.cambiarEstado(jugador.dashEstado);
         }
         base.ActualizarCuadro();
     }

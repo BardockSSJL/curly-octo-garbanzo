@@ -28,6 +28,9 @@ public class MovimientoEstado : PlayerState {
             jugador.salto = true;
             jugador.MaquinaEstado.cambiarEstado(jugador.saltoEstado);
         }
+        if(Input.GetKeyDown(KeyCode.F) && jugador.puedeHacerDash) {
+           jugador.MaquinaEstado.cambiarEstado(jugador.dashEstado);
+        }
         base.ActualizarCuadro();
     }
 
