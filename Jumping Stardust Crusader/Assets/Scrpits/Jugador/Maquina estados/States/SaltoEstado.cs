@@ -38,7 +38,8 @@ public class SaltoEstado : PlayerState {
         if(jugador.movimientoHorizontal == 0){
             jugador.MaquinaEstado.cambiarEstado(jugador.idleEstado);
         }
-        if(Input.GetKeyDown(KeyCode.F) && jugador.puedeHacerDash) {
+        if(Input.GetKeyDown(KeyCode.F)) {
+           jugador.puedeHacerDash = true;
            jugador.MaquinaEstado.cambiarEstado(jugador.dashEstado);
         }
     }

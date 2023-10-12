@@ -21,7 +21,7 @@ public class Jugador : MonoBehaviour
     [field:SerializeField] public TrailRenderer trailRenderer{ get; set; }
 
 	[field:SerializeField] public float gravedadinicial { get; set; }
-	public bool puedeHacerDash = true;
+	public bool puedeHacerDash = false;
 
     [SerializeField] public bool enSuelo{ get; set; }
 
