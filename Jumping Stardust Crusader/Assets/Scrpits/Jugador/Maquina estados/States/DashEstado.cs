@@ -36,6 +36,7 @@ public class DashEstado : PlayerState {
 
     private async void Dash() {
         
+        // TODO(Kevin): Me hace falta ponerle partículas a esto
         jugador.sePuedeMover = false;
         jugador.RB.velocity = new Vector2(jugador.velocidadDash * jugador.transform.localScale.x, 0);
         jugador.animator.SetTrigger("Dash");
@@ -45,6 +46,7 @@ public class DashEstado : PlayerState {
 
 
         jugador.sePuedeMover = true;
+        jugador.animator.SetFloat("Horizontal", 0);
         jugador.animator.SetTrigger("Dash");
 
   }
