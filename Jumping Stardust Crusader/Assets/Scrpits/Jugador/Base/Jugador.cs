@@ -43,6 +43,7 @@ public class Jugador : MonoBehaviour
 
 	public IdleEstado idleEstado {get; set; }
 	public DashEstado dashEstado {get; set; }
+	public AtaqueEstado ataqueEstado;
 
 	public float fuerzaSalto = 400f;
 
@@ -56,6 +57,7 @@ public class Jugador : MonoBehaviour
 		saltoEstado = new SaltoEstado(this, MaquinaEstado);
 		idleEstado = new IdleEstado(this, MaquinaEstado);
 		dashEstado = new DashEstado(this, MaquinaEstado);
+		ataqueEstado = new AtaqueEstado(this, MaquinaEstado);
 		animator = GetComponent<Animator>();
 		
 	}

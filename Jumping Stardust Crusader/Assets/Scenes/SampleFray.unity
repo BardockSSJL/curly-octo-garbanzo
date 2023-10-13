@@ -183,8 +183,8 @@ MonoBehaviour:
     m_Bits: 64
   <controlSuelo>k__BackingField: {fileID: 777402281}
   <dimensionesCaja>k__BackingField: {x: 1, y: 0.25, z: 0}
-  <velocidadDash>k__BackingField: 400
-  <tiempoDash>k__BackingField: 5
+  <velocidadDash>k__BackingField: 10
+  <tiempoDash>k__BackingField: 500
   <trailRenderer>k__BackingField: {fileID: 0}
   <gravedadinicial>k__BackingField: 0
   puedeHacerDash: 1

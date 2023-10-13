@@ -31,6 +31,9 @@ public class IdleEstado : PlayerState {
            jugador.puedeHacerDash = true;
            jugador.MaquinaEstado.cambiarEstado(jugador.dashEstado);
         }
+        if( Input.GetKeyDown(KeyCode.E) ) {
+            jugador.MaquinaEstado.cambiarEstado(jugador.ataqueEstado);
+        }
         base.ActualizarCuadro();
     }
 
