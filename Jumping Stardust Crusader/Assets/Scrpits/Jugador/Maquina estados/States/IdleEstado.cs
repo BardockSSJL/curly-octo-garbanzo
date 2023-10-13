@@ -8,12 +8,12 @@ public class IdleEstado : PlayerState {
 
     public override void EntrarEstado() {
         base.EntrarEstado();
-        Debug.Log("idle entrando");
+        //Debug.Log("idle entrando");
     }
 
     public override void SalirEstado() {
         base.SalirEstado();
-        Debug.Log("idle saliendo");
+        //Debug.Log("idle saliendo");
     }
 
     public override void ActualizarCuadro() {

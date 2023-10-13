@@ -10,12 +10,12 @@ public class MovimientoEstado : PlayerState {
 
     public override void EntrarEstado() {
         base.EntrarEstado();
-        Debug.Log("movimiento entrando");
+        //Debug.Log("movimiento entrando");
     }
 
     public override void SalirEstado() {
         base.SalirEstado();
-        Debug.Log("movimiento saliendo");
+        //Debug.Log("movimiento saliendo");
        
     }
 
@@ -52,7 +52,7 @@ public class MovimientoEstado : PlayerState {
     }
 
     private void Mover(float mover) {
-        Debug.Log("movimiendo");
+        //Debug.Log("movimiendo");
         Vector3 velocidadObjetivo = new Vector2(mover,jugador.RB.velocity.y);
         jugador.RB.velocity = Vector3.SmoothDamp(jugador.RB.velocity, velocidadObjetivo, ref velocidad, suavizadoMovimiento);
         if (mover > 0 && !mirandoDerecha) {

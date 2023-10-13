@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
     public bool EnRango { get; set; }
 
 	#region controlador suelo
-	[field: SerializeField] public Transform controladorSuelo { get; set; }
+	[field: SerializeField] public controladorSueloEnemigo controladorSuelo { get; set; }
 	[field: SerializeField] public float distanciaAlSuelo { get; set; }
 
 

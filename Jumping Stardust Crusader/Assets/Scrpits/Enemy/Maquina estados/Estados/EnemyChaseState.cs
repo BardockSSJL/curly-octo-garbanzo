@@ -11,19 +11,19 @@ public class EnemyChaseState : EnemyState
     }
 
     public override void EntrarEstado() {
-        Debug.Log("Entrar estado: Persecucion");
         base.EntrarEstado();
     }
 
     public override void SalirEstado() {
-        Debug.Log("Salir estado: Persecucion");
         base.SalirEstado();
     }
 
     public override void ActualizarCuadro() {
         base.ActualizarCuadro();
-
-        if (!enemigo.EstadoAggro) {
+        if (enemigo.EnRango) {
+            enemigo.MaquinaEstado.cambiarEstado(enemigo.EstadoAtaque);
+        }
+        else if (!enemigo.EstadoAggro) {
             enemigo.MaquinaEstado.cambiarEstado(enemigo.EstadoEspera);
         }
     }
@@ -39,7 +39,7 @@ public class EnemyChaseState : EnemyState
     }
 
     public void Avanzar() {
-        RaycastHit2D informacionSuelo = Physics2D.Raycast(enemigo.controladorSuelo.position, Vector2.down, enemigo.distanciaAlSuelo, 1 << LayerMask.NameToLayer("Piso"));
+        RaycastHit2D informacionSuelo = enemigo.controladorSuelo.checkForSuelo();
         if (informacionSuelo) {
             enemigo.RB.velocity = new Vector2(enemigo.velocidadPersecucion, enemigo.RB.velocity.y);
         } else {
@@ -54,11 +54,6 @@ public class EnemyChaseState : EnemyState
         enemigo.velocidadPersecucion *= -1;
     }
 
-    
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(enemigo.controladorSuelo.transform.position, enemigo.controladorSuelo.transform.position + Vector3.down * enemigo.distanciaAlSuelo);
-    }
     
     
 }

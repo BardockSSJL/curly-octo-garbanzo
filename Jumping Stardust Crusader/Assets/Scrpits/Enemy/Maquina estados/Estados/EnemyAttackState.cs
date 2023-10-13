@@ -12,6 +12,8 @@ public class EnemyAttackState : EnemyState
 
     public override void EntrarEstado() {
         base.EntrarEstado();
+        enemigo.RB.velocity = new Vector2(0, enemigo.RB.velocity.y);
+        Debug.Log("FUS RO DAH!");
     }
 
     public override void SalirEstado() {
