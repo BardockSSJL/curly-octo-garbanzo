@@ -9,7 +9,9 @@ public class EnemyAttackState : EnemyState
 {
     private DateTime tiempoUltimoAtaque, tiempoActual;
 
-    public EnemyAttackState(Enemy enemigo, EnemyStateMachine maquina) : base(enemigo, maquina){}
+    public EnemyAttackState(Enemy enemigo, EnemyStateMachine maquina) : base(enemigo, maquina){
+        tiempoUltimoAtaque = DateTime.Now.AddMilliseconds((double)(-(enemigo.velocidadAtaque * 1000)));
+    }
 
     public override void EventoTriggerAnim(Enemy.TipoTriggerAnimacion tipoTrigger) {
         base.EventoTriggerAnim(tipoTrigger);
@@ -18,7 +20,6 @@ public class EnemyAttackState : EnemyState
     public override void EntrarEstado() {
         base.EntrarEstado();
         enemigo.RB.velocity = new Vector2(0, enemigo.RB.velocity.y);
-        tiempoUltimoAtaque = DateTime.Now.AddMilliseconds((double)(-(enemigo.velocidadAtaque * 1000)));
     }
 
     public override void SalirEstado() {
