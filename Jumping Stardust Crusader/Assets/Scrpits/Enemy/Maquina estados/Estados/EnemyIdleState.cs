@@ -11,12 +11,13 @@ public class EnemyIdleState : EnemyState
     }
 
     public override void EntrarEstado() {
-        Debug.Log("Entrar estado: Espera");
+        enemigo.RB.velocity = new Vector2(0, enemigo.RB.velocity.y);
+        //Debug.Log("Entrar estado: Espera");
         base.EntrarEstado();
     }
 
     public override void SalirEstado() {
-        Debug.Log("Salir estado: Espera");
+        //Debug.Log("Salir estado: Espera");
         base.SalirEstado();
     }
 
