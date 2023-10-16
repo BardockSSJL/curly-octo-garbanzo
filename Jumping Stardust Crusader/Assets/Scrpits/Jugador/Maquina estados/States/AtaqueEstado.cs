@@ -4,8 +4,21 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class AtaqueEstado : PlayerState {
-    public AtaqueEstado(Jugador jugador, PlayerStateMachine maquinaEstado) : base(jugador, maquinaEstado) {}
+    public ContactFilter2D contacto;
+    public Collider2D[] colliders;
+    public BoxCollider2D hitBoxEspada;
+    public LayerMask enemyLayer;
+    public int hitCount;
+    public int idDaño;
     private bool ataqueEnProceso = false;
+    public AtaqueEstado(Jugador jugador, PlayerStateMachine maquinaEstado, LayerMask enemyLayerT, BoxCollider2D hitBoxEspadaT) : base(jugador, maquinaEstado) {
+        enemyLayer = enemyLayerT;
+        contacto = new ContactFilter2D();
+        contacto.SetLayerMask(enemyLayer);
+		colliders = new Collider2D[10];
+        hitBoxEspada = hitBoxEspadaT;
+        idDaño = 0;
+    }
     public override void EntrarEstado() {
         base.EntrarEstado();
         Debug.Log("ataque entrando");
@@ -32,10 +45,26 @@ public class AtaqueEstado : PlayerState {
     private async void Attack() {
         jugador.animator.SetTrigger("Ataque");
 
-        await Task.Delay(520);
+        var end = Time.time + 0.8f;
+        // Mientras el tiempo de animación esté en proceso
+        List<BadidoBase> hitEnemies = new List<BadidoBase>();
+        while (Time.time < end) {
+            // Obtenga los enemigos que están en el collider de la espada
+		    hitCount = hitBoxEspada.OverlapCollider(contacto, colliders);
+            for (int i = 0; i < hitCount; i++) {
+                colliders[i].GetComponent<BadidoBase>().dannar(jugador.dañoAtaque);
+                // Guarde a qué enemigo a golpeado
+                hitEnemies.Add(colliders[i].GetComponent<BadidoBase>());
+            }
+            await Task.Yield();
+        }
 
         jugador.animator.SetFloat("Horizontal", 0);
-        jugador.animator.SetTrigger("Ataque");
         ataqueEnProceso = false;
+        // A todo enemigo que fue golpeado, permita que se le pueda volver a hacer dano
+        foreach (BadidoBase bandido in hitEnemies) {
+            bandido.fueGolpeado = false;
+        }
+        await Task.Delay(300);
     }
 }

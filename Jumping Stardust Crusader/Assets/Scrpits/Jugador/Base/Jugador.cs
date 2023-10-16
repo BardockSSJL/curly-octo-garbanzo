@@ -43,7 +43,13 @@ public class Jugador : MonoBehaviour
 
 	public IdleEstado idleEstado {get; set; }
 	public DashEstado dashEstado {get; set; }
-	public AtaqueEstado ataqueEstado;
+
+	#region  dano
+	public AtaqueEstado ataqueEstado {get; set; }
+	public LayerMask enemyLayer;
+	public BoxCollider2D hitBoxEspada;
+	[field: SerializeField] public float dañoAtaque{ get; set; } = 25f;
+	#endregion
 
 	public float fuerzaSalto = 400f;
 
@@ -57,7 +63,8 @@ public class Jugador : MonoBehaviour
 		saltoEstado = new SaltoEstado(this, MaquinaEstado);
 		idleEstado = new IdleEstado(this, MaquinaEstado);
 		dashEstado = new DashEstado(this, MaquinaEstado);
-		ataqueEstado = new AtaqueEstado(this, MaquinaEstado);
+		hitBoxEspada = GameObject.Find("hitBoxEspada").GetComponent<BoxCollider2D>();
+		ataqueEstado = new AtaqueEstado(this, MaquinaEstado, enemyLayer, hitBoxEspada);
 		animator = GetComponent<Animator>();
 		
 	}

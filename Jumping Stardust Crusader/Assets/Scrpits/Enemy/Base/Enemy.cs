@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 	public Rigidbody2D RB { get; set; }
 
     public bool viendoDerecha { get; set; } = true;
+	public bool fueGolpeado { get; set; } = false;
 
 	public bool EstadoAggro {get; set; }
     public bool EnRango { get; set; }
@@ -72,8 +73,12 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
 	#region danno/muerte
 	public void dannar(float cantidadDanno) {
-		vidaActual -= cantidadDanno;
-		if (vidaActual < 0) {
+		if (!fueGolpeado) {
+			vidaActual -= cantidadDanno;
+			Debug.Log("Recibi dano");
+			fueGolpeado = true;
+		}
+		if (vidaActual <= 0) {
 			morir();
 		}
 	}
