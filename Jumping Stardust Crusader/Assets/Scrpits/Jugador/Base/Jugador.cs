@@ -93,4 +93,12 @@ public class Jugador : MonoBehaviour
 		MaquinaEstado.estadoActual.ActualizarCuadro();
 	}
 	
+
+
+	#region Dibujo de gizmos
+	private void OnDrawGizmos() {
+      Gizmos.color = Color.yellow;
+      Gizmos.DrawWireCube(controlSuelo.position, dimensionesCaja);
+    }
+	#endregion
 }

@@ -54,5 +54,5 @@ public class SaltoEstado : PlayerState {
     private void OnDrawGizmos() {
       Gizmos.color = Color.yellow;
       Gizmos.DrawWireCube(jugador.controlSuelo.position, jugador.dimensionesCaja);
-  }
+    }
 }

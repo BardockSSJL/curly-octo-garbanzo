@@ -177,24 +177,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <vidaMaxima>k__BackingField: 100
-  "<da\xF1oAtaque>k__BackingField": 25
   <vidaActual>k__BackingField: 0
   <queEsSuelo>k__BackingField:
     serializedVersion: 2
     m_Bits: 64
   <controlSuelo>k__BackingField: {fileID: 777402281}
-  <dimensionesCaja>k__BackingField: {x: 1, y: 0.25, z: 0}
+  <dimensionesCaja>k__BackingField: {x: 0.6, y: 0.25, z: 0}
   <velocidadDash>k__BackingField: 10
   <tiempoDash>k__BackingField: 500
+  <enfriamientoDash>k__BackingField: 0
+  puedeHacerDash: 1
+  hayEnfriamientoDash: 1
   <trailRenderer>k__BackingField: {fileID: 0}
   <gravedadinicial>k__BackingField: 0
-  puedeHacerDash: 1
   movimientoHorizontal: 0
   velocidadMovimiento: 400
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   hitBoxEspada: {fileID: 0}
+  "<da\xF1oAtaque>k__BackingField": 25
   fuerzaSalto: 400
   salto: 0
   animator: {fileID: 41878590}
@@ -1945,7 +1947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777402280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2115,7 +2117,6 @@ MonoBehaviour:
   <vidaActual>k__BackingField: 0
   <velocidadPersecucion>k__BackingField: 4
   <velocidadAtaque>k__BackingField: 0
-  fueGolpeado: 0
   <controladorSuelo>k__BackingField: {fileID: 249882889}
 --- !u!1 &956429680
 GameObject:
