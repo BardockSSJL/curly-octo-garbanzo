@@ -13,15 +13,22 @@ public class Jugador : MonoBehaviour
 	[field:SerializeField] public Transform controlSuelo{ get; set; }
 
 	[field:SerializeField] public Vector3 dimensionesCaja{ get; set; }
-
+	
+	#region dash
 	[field:SerializeField] public float velocidadDash{ get; set; }
 
     [field:SerializeField] public float tiempoDash{ get; set; }
 
+	[field:SerializeField] public int enfriamientoDash{ get; set; }
+	
+	public bool puedeHacerDash = false;
+
+	public bool hayEnfriamientoDash = true;
+	#endregion
+
     [field:SerializeField] public TrailRenderer trailRenderer{ get; set; }
 
 	[field:SerializeField] public float gravedadinicial { get; set; }
-	public bool puedeHacerDash = false;
 
     [SerializeField] public bool enSuelo{ get; set; }
 

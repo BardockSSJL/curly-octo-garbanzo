@@ -28,7 +28,7 @@ public class MovimientoEstado : PlayerState {
             jugador.salto = true;
             jugador.MaquinaEstado.cambiarEstado(jugador.saltoEstado);
         }
-        if(Input.GetKeyDown(KeyCode.F)) {
+        if(Input.GetKeyDown(KeyCode.F) && jugador.hayEnfriamientoDash) {
            jugador.puedeHacerDash = true;
            jugador.MaquinaEstado.cambiarEstado(jugador.dashEstado);
         }

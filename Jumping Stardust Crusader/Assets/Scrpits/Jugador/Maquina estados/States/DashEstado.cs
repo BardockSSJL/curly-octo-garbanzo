@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class DashEstado : PlayerState {
+
     public DashEstado(Jugador jugador, PlayerStateMachine maquinaEstado) : base(jugador, maquinaEstado) {}
-    private bool sePuedeMover = true;
     public override void EntrarEstado() {
         base.EntrarEstado();
         Debug.Log("dash entrando");
@@ -29,6 +29,7 @@ public class DashEstado : PlayerState {
     public override void ActualizarFisica() {
         if(jugador.puedeHacerDash && jugador.sePuedeMover) {
             jugador.puedeHacerDash = false;
+            jugador.hayEnfriamientoDash = false;
             Dash();
         }
         base.ActualizarFisica();
@@ -48,6 +49,9 @@ public class DashEstado : PlayerState {
         jugador.sePuedeMover = true;
         jugador.animator.SetFloat("Horizontal", 0);
         jugador.animator.SetTrigger("Dash");
-
+        // Evite que el jugador spamee el dash 
+        await Task.Delay(jugador.enfriamientoDash);
+        jugador.hayEnfriamientoDash = true;
+        
   }
 }
