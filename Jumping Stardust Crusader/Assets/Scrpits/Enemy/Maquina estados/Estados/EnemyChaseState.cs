@@ -26,6 +26,7 @@ public class EnemyChaseState : EnemyState
         else if (!enemigo.EstadoAggro) {
             enemigo.MaquinaEstado.cambiarEstado(enemigo.EstadoEspera);
         }
+        enemigo.animator.SetFloat("Velocidad", enemigo.RB.velocity.y);
     }
 
     public override void ActualizarFisica() {

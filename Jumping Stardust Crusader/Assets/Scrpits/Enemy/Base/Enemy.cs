@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 	[field: SerializeField] public float velocidadPersecucion{ get; set; }
 
 	[field: SerializeField] public float velocidadAtaque{ get; set; }
+
+	// ToDo: Volver privado
+	internal Animator animator;
 	
 	
 	public GameObject jugador {get; set; }
@@ -25,7 +28,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
 	#region controlador suelo
 	[field: SerializeField] public controladorSueloEnemigo controladorSuelo { get; set; }
-
+	[field: SerializeField] public ControladorAtaqueEnemigo controladorAtaque { get; set; }
 
 	#endregion
 
@@ -43,6 +46,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 		EstadoPersecucion = new EnemyChaseState(this, MaquinaEstado);
 		EstadoAtaque = new EnemyAttackState(this, MaquinaEstado);
 		jugador = GameObject.FindGameObjectWithTag("Jugador");
+		animator = GetComponent<Animator>();
 		if (velocidadAtaque == 0) velocidadAtaque = 2;
 	}
 	
