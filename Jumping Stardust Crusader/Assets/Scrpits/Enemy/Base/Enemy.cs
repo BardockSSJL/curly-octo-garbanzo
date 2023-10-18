@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
 	private void Update() {
 		MaquinaEstado.estadoActual.ActualizarCuadro();
+		animator.SetFloat("Velocidad", (RB.velocity.x > 0) ? RB.velocity.x : -(RB.velocity.x));
 	}
 
 	#region movimiento
@@ -109,7 +110,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 
 	public enum TipoTriggerAnimacion {
 		EnemigoDannado,
-		EnemigoMuere
+		EnemigoMuere,
+		EnemigoAtaca
 	}
 	#endregion
 

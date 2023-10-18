@@ -2117,7 +2117,7 @@ MonoBehaviour:
   <vidaMaxima>k__BackingField: 100
   <vidaActual>k__BackingField: 0
   <velocidadPersecucion>k__BackingField: 4
-  <velocidadAtaque>k__BackingField: 4
+  <velocidadAtaque>k__BackingField: 2
   <controladorSuelo>k__BackingField: {fileID: 249882889}
   <controladorAtaque>k__BackingField: {fileID: 1655887467}
 --- !u!1 &956429680

@@ -11,10 +11,8 @@ public class ControladorAtaqueEnemigo : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Debug.Log(GetComponent<CircleCollider2D>());
-        Debug.Log(GetComponent<CircleCollider2D>().enabled);
+        // Parece no funcionar correctamente. Desactivar desde el inspector
         GetComponent<CircleCollider2D>().enabled = false;
-        Debug.Log(GetComponent<CircleCollider2D>().enabled);
     }
 
     // Update is called once per frame
@@ -24,11 +22,12 @@ public class ControladorAtaqueEnemigo : MonoBehaviour
     }
 
     public void Golpear() {
-        MyAnimator.SetTrigger("Atacar");
+        //MyAnimator.SetTrigger("Atacar");
     }
 
     private void OnTriggerEnter2D(Collider2D colision) {
         if (colision.gameObject.CompareTag("Jugador")) {
+            // TODO: Cambiar por jugador.recibirdaño
             Debug.Log("Golpeado");
         }
     }
