@@ -6,11 +6,15 @@ public class ControladorAtaqueEnemigo : MonoBehaviour
 {
     [SerializeField] public float radioHitbox;
     [SerializeField] public float dañoAtaque;
+    [SerializeField] protected Animator MyAnimator;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Debug.Log(GetComponent<CircleCollider2D>());
+        Debug.Log(GetComponent<CircleCollider2D>().enabled);
+        GetComponent<CircleCollider2D>().enabled = false;
+        Debug.Log(GetComponent<CircleCollider2D>().enabled);
     }
 
     // Update is called once per frame
@@ -20,17 +24,13 @@ public class ControladorAtaqueEnemigo : MonoBehaviour
     }
 
     public void Golpear() {
-        Collider2D[] objetosGolpeados = Physics2D.OverlapCircleAll(transform.position, radioHitbox);
-        foreach (Collider2D objetoGolpeado in objetosGolpeados) {
-            if (objetoGolpeado.CompareTag("Jugador") == true)
-            {
-                Debug.Log("golpeado");
-            }
+        MyAnimator.SetTrigger("Atacar");
+    }
+
+    private void OnTriggerEnter2D(Collider2D colision) {
+        if (colision.gameObject.CompareTag("Jugador")) {
+            Debug.Log("Golpeado");
         }
     }
 
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radioHitbox);
-    }
 }

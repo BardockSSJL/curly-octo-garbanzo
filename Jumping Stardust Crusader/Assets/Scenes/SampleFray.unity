@@ -2117,7 +2117,7 @@ MonoBehaviour:
   <vidaMaxima>k__BackingField: 100
   <vidaActual>k__BackingField: 0
   <velocidadPersecucion>k__BackingField: 4
-  <velocidadAtaque>k__BackingField: 0
+  <velocidadAtaque>k__BackingField: 4
   <controladorSuelo>k__BackingField: {fileID: 249882889}
   <controladorAtaque>k__BackingField: {fileID: 1655887467}
 --- !u!1 &956429680
@@ -2221,6 +2221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1655887466}
   - component: {fileID: 1655887467}
+  - component: {fileID: 1655887468}
   m_Layer: 7
   m_Name: Controlador Ataque
   m_TagString: Untagged
@@ -2257,3 +2258,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radioHitbox: 0.55
   "da\xF1oAtaque": 0
+  MyAnimator: {fileID: 920210587}
+--- !u!58 &1655887468
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655887465}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55
