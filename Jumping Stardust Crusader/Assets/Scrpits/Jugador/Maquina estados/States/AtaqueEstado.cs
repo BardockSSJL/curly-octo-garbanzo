@@ -47,14 +47,14 @@ public class AtaqueEstado : PlayerState {
 
         var end = Time.time + 0.8f;
         // Mientras el tiempo de animación esté en proceso
-        List<BadidoBase> hitEnemies = new List<BadidoBase>();
+        List<Enemy> hitEnemies = new List<Enemy>();
         while (Time.time < end) {
             // Obtenga los enemigos que están en el collider de la espada
 		    hitCount = hitBoxEspada.OverlapCollider(contacto, colliders);
             for (int i = 0; i < hitCount; i++) {
-                colliders[i].GetComponent<BadidoBase>().dannar(jugador.dañoAtaque);
+                colliders[i].GetComponent<Enemy>().dannar(jugador.dañoAtaque);
                 // Guarde a qué enemigo a golpeado
-                hitEnemies.Add(colliders[i].GetComponent<BadidoBase>());
+                hitEnemies.Add(colliders[i].GetComponent<Enemy>());
             }
             await Task.Yield();
         }
@@ -62,7 +62,7 @@ public class AtaqueEstado : PlayerState {
         jugador.animator.SetFloat("Horizontal", 0);
         ataqueEnProceso = false;
         // A todo enemigo que fue golpeado, permita que se le pueda volver a hacer dano
-        foreach (BadidoBase bandido in hitEnemies) {
+        foreach (Enemy bandido in hitEnemies) {
             bandido.fueGolpeado = false;
         }
         await Task.Delay(300);
