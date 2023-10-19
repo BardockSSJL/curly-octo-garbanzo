@@ -4,6 +4,7 @@ using UnityEngine;
 
 using System;
 
+// este script está interpretando los literales decimales cmo double
 public class EnemyDeathState : EnemyState
 {
     private bool caer;
@@ -38,18 +39,21 @@ public class EnemyDeathState : EnemyState
         if ((double)((TimeSpan)(tiempoActual - tiempoMuerte)).TotalMilliseconds > 5000) {
             enemigo.morir();
         }
-        base.ActualizarCuadro();
-    }
-
-    public override void ActualizarFisica() {
-        // si el enemigo muere en el aire cae hasta tocar el suelo y se detiene
-        // si cae desde muy alto podría atravesar el collider del suelo y no dejar de caer
+        
+        // Moví lo de la caída al Update y dejó de atravesar el suelo
         if (caer) {
             if (Physics2D.OverlapBox(enemigo.transform.position + enemigo.controladorSuelo.posicionCaja, enemigo.controladorSuelo.posicionCaja, 0f, 1 << LayerMask.NameToLayer("Piso"))) {
                 enemigo.RB.simulated = false;
                 caer = false;
             }
         }
+        base.ActualizarCuadro();
+    }
+
+    public override void ActualizarFisica() {
+        // si el enemigo muere en el aire cae hasta tocar el suelo y se detiene
+        // si cae desde muy alto podría atravesar el collider del suelo y no dejar de caer
+        
         base.ActualizarFisica();
     }
 

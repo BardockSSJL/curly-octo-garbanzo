@@ -1994,7 +1994,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -2058,7 +2058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920210582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9, y: 4.28, z: 0}
+  m_LocalPosition: {x: 6.66, y: 5.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2116,7 +2116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47922efa8336644bc5b77c98dfb433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <vidaMaxima>k__BackingField: 1
+  <vidaMaxima>k__BackingField: 0
   <vidaActual>k__BackingField: 0
   <velocidadPersecucion>k__BackingField: 4
   <velocidadAtaque>k__BackingField: 2
