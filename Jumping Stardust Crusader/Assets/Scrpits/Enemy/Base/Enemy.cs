@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 	public EnemyIdleState EstadoEspera { get; set; }
 	public EnemyChaseState EstadoPersecucion { get; set; }
 	public EnemyAttackState EstadoAtaque {	get; set; }
+	public EnemyDeathState EstadoMuerto {	get; set; }
 	#endregion
 
 
@@ -45,6 +46,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 		EstadoEspera = new EnemyIdleState(this, MaquinaEstado);
 		EstadoPersecucion = new EnemyChaseState(this, MaquinaEstado);
 		EstadoAtaque = new EnemyAttackState(this, MaquinaEstado);
+		EstadoMuerto = new EnemyDeathState(this, MaquinaEstado);
 		jugador = GameObject.FindGameObjectWithTag("Jugador");
 		animator = GetComponent<Animator>();
 		if (velocidadAtaque == 0) velocidadAtaque = 2;
@@ -83,12 +85,10 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 			Debug.Log("Recibi dano");
 			fueGolpeado = true;
 		}
-		if (vidaActual <= 0) {
-			morir();
-		}
 	}
 
     public void morir() {
+		//animator.SetTrigger("Morir");
 		Destroy(gameObject);
 	}
 	#endregion
@@ -116,6 +116,10 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 	#endregion
 
 	// ignorar este comentario
+	private void OnDrawGizmos() {
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireCube(transform.position + controladorSuelo.posicionCaja, controladorSuelo.dimensionesCaja);
+	}
 
 	
 }

@@ -1411,7 +1411,7 @@ GameObject:
   m_Layer: 0
   m_Name: Controlador Suelo
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1443,6 +1443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanciaAlSuelo: 1
+  posicionCaja: {x: 0, y: 0.1, z: 0}
+  dimensionesCaja: {x: 0.5, y: 0.2, z: 1}
 --- !u!1 &491650238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,8 +1889,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729280972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2056,7 +2058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920210582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.46, y: 2.94, z: 0}
+  m_LocalPosition: {x: 1.9, y: 4.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2114,7 +2116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47922efa8336644bc5b77c98dfb433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <vidaMaxima>k__BackingField: 100
+  <vidaMaxima>k__BackingField: 1
   <vidaActual>k__BackingField: 0
   <velocidadPersecucion>k__BackingField: 4
   <velocidadAtaque>k__BackingField: 2

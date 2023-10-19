@@ -20,7 +20,8 @@ public class EnemyChaseState : EnemyState
 
     public override void ActualizarCuadro() {
         base.ActualizarCuadro();
-        if (enemigo.EnRango) {
+        if (enemigo.vidaActual <= 0) enemigo.MaquinaEstado.cambiarEstado(enemigo.EstadoMuerto);
+        else if (enemigo.EnRango) {
             enemigo.MaquinaEstado.cambiarEstado(enemigo.EstadoAtaque);
         }
         else if (!enemigo.EstadoAggro) {

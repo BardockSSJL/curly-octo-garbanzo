@@ -23,7 +23,8 @@ public class EnemyIdleState : EnemyState
 
     public override void ActualizarCuadro() {
         base.ActualizarCuadro();
-        if (enemigo.EstadoAggro) {
+        if (enemigo.vidaActual <= 0) enemigo.MaquinaEstado.cambiarEstado(enemigo.EstadoMuerto);
+        else if (enemigo.EstadoAggro) {
             enemigo.MaquinaEstado.cambiarEstado(enemigo.EstadoPersecucion);
         }
     }

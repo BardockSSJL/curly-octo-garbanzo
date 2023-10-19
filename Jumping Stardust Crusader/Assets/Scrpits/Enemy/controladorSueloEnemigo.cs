@@ -5,6 +5,8 @@ using UnityEngine;
 public class controladorSueloEnemigo : MonoBehaviour
 {
     [SerializeField] public float distanciaAlSuelo;
+    [SerializeField] public Vector3 posicionCaja;
+    [SerializeField] public Vector3 dimensionesCaja;
 
 
     void Update() {
@@ -16,7 +18,7 @@ public class controladorSueloEnemigo : MonoBehaviour
     }
 
     private void OnDrawGizmos() {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * distanciaAlSuelo);
     }
 }
