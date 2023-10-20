@@ -191,13 +191,13 @@ MonoBehaviour:
   <trailRenderer>k__BackingField: {fileID: 0}
   <gravedadinicial>k__BackingField: 0
   movimientoHorizontal: 0
-  velocidadMovimiento: 440
+  velocidadMovimiento: 400
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   hitBoxEspada: {fileID: 0}
   "<da\xF1oAtaque>k__BackingField": 25
-  fuerzaSalto: 400
+  fuerzaSalto: 440
   salto: 0
   animator: {fileID: 41878590}
 --- !u!50 &41878592
