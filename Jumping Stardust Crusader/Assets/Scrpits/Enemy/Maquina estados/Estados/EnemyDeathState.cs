@@ -41,18 +41,20 @@ public class EnemyDeathState : EnemyState
         }
         
         // Moví lo de la caída al Update y dejó de atravesar el suelo
-        if (caer) {
-            if (Physics2D.OverlapBox(enemigo.transform.position + enemigo.controladorSuelo.posicionCaja, enemigo.controladorSuelo.posicionCaja, 0f, 1 << LayerMask.NameToLayer("Piso"))) {
-                enemigo.RB.simulated = false;
-                caer = false;
-            }
-        }
+        
         base.ActualizarCuadro();
     }
 
     public override void ActualizarFisica() {
         // si el enemigo muere en el aire cae hasta tocar el suelo y se detiene
         // si cae desde muy alto podría atravesar el collider del suelo y no dejar de caer
+
+        if (caer) {
+            if (Physics2D.OverlapBox(enemigo.transform.position + enemigo.controladorSuelo.posicionCaja, enemigo.controladorSuelo.posicionCaja, 0f, 1 << LayerMask.NameToLayer("Piso"))) {
+                enemigo.RB.simulated = false;
+                caer = false;
+            }
+        }
         
         base.ActualizarFisica();
     }
