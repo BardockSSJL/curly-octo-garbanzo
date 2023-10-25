@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 360207547056476493}
   - component: {fileID: 360207547056476490}
   m_Layer: 7
-  m_Name: Bandido Basico
+  m_Name: Bandido basico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47922efa8336644bc5b77c98dfb433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <vidaMaxima>k__BackingField: 0
+  <vidaMaxima>k__BackingField: 50
   <vidaActual>k__BackingField: 0
   <velocidadPersecucion>k__BackingField: 4
   <velocidadAtaque>k__BackingField: 2

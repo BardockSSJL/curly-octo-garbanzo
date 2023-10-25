@@ -33,11 +33,11 @@ public class PuzzleEleccion : MonoBehaviour, IPuzzle
         }
     }
 
-    public void Fallar(){
+    public virtual void Fallar(){
         Debug.Log("Nope!");
         Desactivar();
     }
-    public void Acertar(){
+    public virtual void Acertar(){
         Debug.Log("Tome una poción, joven");
         Desactivar();
     }
