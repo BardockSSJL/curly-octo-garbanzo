@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f595041e8142cf4b9de2dfbc2f603d6, type: 3}
   m_Name: Lista
   m_EditorClassIdentifier: 
-  posciones:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  posciones: []
