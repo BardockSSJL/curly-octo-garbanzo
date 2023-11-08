@@ -1,17 +1,17 @@
-using Posciones;
+using Pociones;
 
-public class FabricaAbstrata
+public class FabricaAbstracta
 {
-    private readonly FabricaPosciones fabricaPosciones;
+    private readonly FabricaPociones fabricaPociones;
 
-    public FabricaAbstrata(FabricaPosciones fabricaPosciones)
+    public FabricaAbstracta(FabricaPociones fabricaPociones)
     {
-        this.fabricaPosciones = fabricaPosciones;
+        this.fabricaPociones = fabricaPociones;
     }
 
-    public PoscionBase CrearPoscion(string Id)
+    public PocionBase CrearPocion(string Id)
     {
-        return fabricaPosciones.Create(Id);
+        return fabricaPociones.Create(Id);
     }
 
 }

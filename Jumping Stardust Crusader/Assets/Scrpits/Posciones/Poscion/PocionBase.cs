@@ -1,9 +1,9 @@
 using UnityEngine;
 
 
-namespace Posciones
+namespace Pociones
 {
-    public abstract class PoscionBase : MonoBehaviour
+    public abstract class PocionBase : MonoBehaviour
     {
         [SerializeField] protected string id;
 

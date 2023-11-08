@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Posciones;
+using Pociones;
 
 public class Dispensador : MonoBehaviour, IInteractuable {
 
@@ -10,17 +10,19 @@ public class Dispensador : MonoBehaviour, IInteractuable {
     public GameObject Jugador { get; set; }
     public GameObject Indicador { get; set; }
     //fabrica 
-    [SerializeField] private ListaPosciones Configuration;
-    private FabricaAbstrata fabrica;
+    [SerializeField] private ListaPociones Config;
+    private FabricaAbstracta fabrica;
     
     void Start()
     {
-        fabrica = new FabricaAbstrata(new FabricaPosciones(Instantiate(Configuration)));
+        fabrica = new FabricaAbstracta(new FabricaPociones(Instantiate(Config)));
     }
 
     public void Interactuar() {
         Debug.Log("Tome una poción, joven");
-        fabrica.CrearPoscion("Vida");
+        fabrica.CrearPocion("Vida");
+        fabrica.CrearPocion("Armadura");
+        fabrica.CrearPocion("Dano");
         Desactivar();
     }
 

@@ -1,20 +1,20 @@
 using Object = UnityEngine.Object;
 
-namespace Posciones
+namespace Pociones
 {
-    public class FabricaPosciones
+    public class FabricaPociones
     {
-        private readonly ListaPosciones lista;
+        private readonly ListaPociones lista;
 
-        public FabricaPosciones(ListaPosciones lista)
+        public FabricaPociones(ListaPociones lista)
         {
             this.lista = lista;
         }
 
-        public PoscionBase Create(string id)
+        public PocionBase Create(string id)
         {
-            var poscion = lista.GetPoscionPrefabById(id);
-            return Object.Instantiate(poscion);
+            var pocion = lista.GetPocionPrefabById(id);
+            return Object.Instantiate(pocion);
         }
     }
 }
