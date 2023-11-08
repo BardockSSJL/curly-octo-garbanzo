@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f595041e8142cf4b9de2dfbc2f603d6, type: 3}
   m_Name: lista
   m_EditorClassIdentifier: 
-  pociones: []
+  pociones:
+  - {fileID: 6392246819266068176, guid: 24c121f703a6a674da577bd8d65080cf, type: 3}
+  - {fileID: 6900928459043214378, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
+  - {fileID: 7245842176097137743, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
