@@ -2045,11 +2045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940498811696652586, guid: 24c121f703a6a674da577bd8d65080cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.41623
+      value: -8.87
       objectReference: {fileID: 0}
     - target: {fileID: 5940498811696652586, guid: 24c121f703a6a674da577bd8d65080cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09282622
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 5940498811696652586, guid: 24c121f703a6a674da577bd8d65080cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2161,17 +2161,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dano
       objectReference: {fileID: 0}
+    - target: {fileID: 6900928459043214378, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
+      propertyPath: AreaDeteccionJugador
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7178502038111021782, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7178502038111021782, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.552521
+      value: -10.55
       objectReference: {fileID: 0}
     - target: {fileID: 7178502038111021782, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09282622
+      value: -3.06
       objectReference: {fileID: 0}
     - target: {fileID: 7178502038111021782, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2214,6 +2218,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2011808629924322356, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3402399096082365363, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
       propertyPath: m_Name
       value: Armadura
@@ -2224,11 +2232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564385406187661718, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.417672
+      value: -7.43
       objectReference: {fileID: 0}
     - target: {fileID: 8564385406187661718, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.023960114
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 8564385406187661718, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
       propertyPath: m_LocalPosition.z
