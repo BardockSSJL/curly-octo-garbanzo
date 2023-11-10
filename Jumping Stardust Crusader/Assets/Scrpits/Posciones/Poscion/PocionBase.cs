@@ -17,8 +17,7 @@ namespace Pociones
             AreaDeteccionJugador = gameObject.AddComponent<CircleCollider2D>();
             AreaDeteccionJugador.radius = 1.5f;
             AreaDeteccionJugador.isTrigger = true;
-            RigidbodyConstraints2D a = RigidbodyConstraints2D.FreezeRotation;
-            gameObject.GetComponent<Rigidbody2D>().constraints = a;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.3f;
         }
 

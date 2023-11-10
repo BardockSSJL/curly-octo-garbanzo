@@ -26,7 +26,9 @@ public class Dispensador : MonoBehaviour, IInteractuable {
 
     public void Interactuar() {
         // TODO: Falta verificar que el tipo indicado sea válido
-        fabrica.CrearPocion(TipoDePocion == "" ? "Vida" : TipoDePocion);
+        PocionBase pocionCreada = fabrica.CrearPocion(TipoDePocion == "" ? "Vida" : TipoDePocion);
+        pocionCreada.transform.position = transform.position + new Vector3(0, 1.25f, 0);
+        pocionCreada.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 2f), ForceMode2D.Impulse);
         //Desactivar();
     }
 
