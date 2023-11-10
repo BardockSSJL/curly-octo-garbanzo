@@ -277,7 +277,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1502,7 +1502,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3ae2ca6f03562f049ac5770c4c868932, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1986,6 +1986,10 @@ PrefabInstance:
       propertyPath: <vidaMaxima>k__BackingField
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 360207547056476494, guid: f7f231276a42cdb4f913d2d8d53ba623, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 360207547056476495, guid: f7f231276a42cdb4f913d2d8d53ba623, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2039,6 +2043,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4858482375005437558, guid: 24c121f703a6a674da577bd8d65080cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5940498811696652586, guid: 24c121f703a6a674da577bd8d65080cf, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2096,6 +2104,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 700669899078957434, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 700669899962988609, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 700669900038006997, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
       propertyPath: m_Name
       value: PuzzleEleccionRecompensa
@@ -2148,6 +2164,10 @@ PrefabInstance:
       propertyPath: <recompensa>k__BackingField
       value: 
       objectReference: {fileID: 360207547056476480, guid: f7f231276a42cdb4f913d2d8d53ba623, type: 3}
+    - target: {fileID: 700669900816503131, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
 --- !u!1001 &5464555147887064613
@@ -2160,6 +2180,10 @@ PrefabInstance:
     - target: {fileID: 4390446728566188741, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
       propertyPath: m_Name
       value: Dano
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594821724618909508, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6900928459043214378, guid: 8b8dc12a90c7cbb4e8fb53201ccab675, type: 3}
       propertyPath: AreaDeteccionJugador
@@ -2218,6 +2242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 972801338394878793, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2011808629924322356, guid: 40e4c53570c86f4409167addca838c8a, type: 3}
       propertyPath: m_Constraints
       value: 4
