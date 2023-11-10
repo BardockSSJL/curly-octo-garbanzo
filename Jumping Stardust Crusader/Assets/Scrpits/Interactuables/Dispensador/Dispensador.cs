@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pociones;
+using System;
 
 public class Dispensador : MonoBehaviour, IInteractuable {
 
@@ -12,18 +13,21 @@ public class Dispensador : MonoBehaviour, IInteractuable {
     //fabrica 
     [SerializeField] private ListaPociones Config;
     private FabricaAbstracta fabrica;
+
+    [SerializeField] private String TipoDePocion;
     
     void Start()
     {
         fabrica = new FabricaAbstracta(new FabricaPociones(Instantiate(Config)));
+        if (TipoDePocion == "") {
+            Debug.Log("vacio");
+        }
     }
 
     public void Interactuar() {
-        Debug.Log("Tome una poción, joven");
-        fabrica.CrearPocion("Vida");
-        fabrica.CrearPocion("Armadura");
-        fabrica.CrearPocion("Dano");
-        Desactivar();
+        // TODO: Falta verificar que el tipo indicado sea válido
+        fabrica.CrearPocion(TipoDePocion == "" ? "Vida" : TipoDePocion);
+        //Desactivar();
     }
 
     public void Activar() {

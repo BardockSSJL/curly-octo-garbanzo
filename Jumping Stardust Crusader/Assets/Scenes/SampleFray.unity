@@ -1543,6 +1543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 6626c125431b93a43bdf8433ee210e7b, type: 2}
+  TipoDePocion: 
 --- !u!61 &498285054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1901,7 +1902,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 968f59679d8e5154bbc8c7ac0159992d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2108,6 +2109,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 700669899773585858, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 700669899962988609, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -2164,6 +2169,14 @@ PrefabInstance:
       propertyPath: <recompensa>k__BackingField
       value: 
       objectReference: {fileID: 360207547056476480, guid: f7f231276a42cdb4f913d2d8d53ba623, type: 3}
+    - target: {fileID: 700669900304321101, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 700669900625507177, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 700669900816503131, guid: 471c605cb884dfd4fbafccadf82f1ff5, type: 3}
       propertyPath: m_SortingOrder
       value: 1
