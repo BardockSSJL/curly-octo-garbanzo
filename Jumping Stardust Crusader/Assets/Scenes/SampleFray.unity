@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 41878592}
   - component: {fileID: 41878591}
   - component: {fileID: 41878590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HeroKnight_0
   m_TagString: Jugador
   m_Icon: {fileID: 0}
@@ -1808,7 +1808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777402281}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: controlSuelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1924,7 +1924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612390970}
   - component: {fileID: 1612390971}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hitBoxEspada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
