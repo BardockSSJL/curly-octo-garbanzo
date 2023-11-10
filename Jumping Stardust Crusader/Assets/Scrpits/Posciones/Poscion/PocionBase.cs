@@ -13,6 +13,7 @@ namespace Pociones
         public string Id=>id;
 
         void Awake() {
+            gameObject.layer = LayerMask.NameToLayer("Etereos");
             AreaDeteccionJugador = gameObject.AddComponent<CircleCollider2D>();
             AreaDeteccionJugador.radius = 1.5f;
             AreaDeteccionJugador.isTrigger = true;
@@ -33,6 +34,7 @@ namespace Pociones
         if (collision.gameObject.tag == "Jugador")
         {
             Debug.Log("recoger");
+            Destroy(gameObject);
         }
     }
 
