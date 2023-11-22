@@ -56,6 +56,11 @@ public class Jugador : MonoBehaviour
 	public LayerMask enemyLayer;
 	public BoxCollider2D hitBoxEspada;
 	[field: SerializeField] public float dañoAtaque{ get; set; } = 25f;
+
+	public void RecibirDanno(float cantidad){
+		vidaActual -= cantidad;
+	}
+
 	#endregion
 
 	public float fuerzaSalto = 400f;

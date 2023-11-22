@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radioHitbox: 0.55
-  "da\xF1oAtaque": 0
+  "da\xF1oAtaque": 20
   MyAnimator: {fileID: 360207547056476493}
 --- !u!58 &360207548334001082
 CircleCollider2D:

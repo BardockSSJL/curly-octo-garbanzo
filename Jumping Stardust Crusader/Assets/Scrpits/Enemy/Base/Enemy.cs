@@ -81,6 +81,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMovable, ITriggerCheckabl
 	#region danno/muerte
 	public void dannar(float cantidadDanno) {
 		if (!fueGolpeado) {
+			//RB.AddForce(new Vector2(5,1).normalized * 12f, ForceMode2D.Impulse);
 			vidaActual -= cantidadDanno;
 			Debug.Log("Recibi dano");
 			fueGolpeado = true;

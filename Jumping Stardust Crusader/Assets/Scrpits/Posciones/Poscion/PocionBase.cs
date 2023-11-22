@@ -29,13 +29,13 @@ namespace Pociones
         }
 
         void OnCollisionEnter2D(Collision2D collision)
-    {
+        {
         if (collision.gameObject.tag == "Jugador")
         {
             Debug.Log("recoger");
             Destroy(gameObject);
         }
-    }
+        }
 
         private void OnDrawGizmos() {
             Gizmos.DrawWireSphere(transform.position, 1.5f);

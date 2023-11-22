@@ -48,7 +48,7 @@ public class EnemyAttackState : EnemyState
 
     public void Atacar() {
         //Debug.Log("FUS RO DAH!");
-        //enemigo.animator.SetTrigger("Atacar");
+        enemigo.animator.SetTrigger("Atacar");
         tiempoUltimoAtaque = DateTime.Now;
     }
 }
