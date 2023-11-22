@@ -44,12 +44,22 @@ public class EnemyAttackState : EnemyState
 
     public override void ActualizarFisica() {
         base.ActualizarFisica();
+        if ((enemigo.jugador.transform.position.x < enemigo.transform.position.x && enemigo.viendoDerecha) ||
+            enemigo.jugador.transform.position.x > enemigo.transform.position.x && !enemigo.viendoDerecha) {
+            Girar();
+        }
     }
 
     public void Atacar() {
         //Debug.Log("FUS RO DAH!");
         enemigo.animator.SetTrigger("Atacar");
         tiempoUltimoAtaque = DateTime.Now;
+    }
+
+    private void Girar() {
+        enemigo.viendoDerecha = !enemigo.viendoDerecha;
+        enemigo.transform.eulerAngles = new Vector3(0, enemigo.transform.eulerAngles.y + 180, 0);
+        enemigo.velocidadPersecucion *= -1;
     }
 }
 
