@@ -24672,6 +24672,7 @@ GameObject:
   - component: {fileID: 985914227}
   - component: {fileID: 985914229}
   - component: {fileID: 985914228}
+  - component: {fileID: 985914230}
   m_Layer: 5
   m_Name: InventarioUI
   m_TagString: Untagged
@@ -24740,6 +24741,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985914226}
   m_CullTransparentMesh: 1
+--- !u!114 &985914230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985914226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1f24cd50b91db4bb0eedee3908fca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventarioJugador: {fileID: 41878596}
 --- !u!1 &1021453755
 GameObject:
   m_ObjectHideFlags: 0
