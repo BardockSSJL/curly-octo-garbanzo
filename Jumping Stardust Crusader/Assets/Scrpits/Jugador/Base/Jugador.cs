@@ -99,7 +99,8 @@ public class Jugador : MonoBehaviour
 		{
 			case 1:
 			if(GetComponent<InventarioJugador>().PocionVidaDisponible) {
-				Debug.Log("Pocion usada");
+				vidaActual += 30;
+				if (vidaActual > vidaMaxima) vidaActual = vidaMaxima;
 				GetComponent<InventarioJugador>().PocionVidaDisponible = false;
 			} else {
 				Debug.Log("Pocion no disponible");
