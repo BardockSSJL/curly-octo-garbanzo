@@ -94,8 +94,66 @@ public class Jugador : MonoBehaviour
 		
 	}
 
+	private void tomarPocion(int tipo){
+		switch (tipo)
+		{
+			case 1:
+			if(GetComponent<InventarioJugador>().PocionVidaDisponible) {
+				Debug.Log("Pocion usada");
+				GetComponent<InventarioJugador>().PocionVidaDisponible = false;
+			} else {
+				Debug.Log("Pocion no disponible");
+			}
+			break;
+			case 2:
+			if(GetComponent<InventarioJugador>().PocionVidaDisponible) {
+				Debug.Log("Pocion daño usada");
+				GetComponent<InventarioJugador>().PocionVidaDisponible = false;
+			} else {
+				Debug.Log("Pocion no disponible");
+			}
+			break;
+			case 3:
+			if(GetComponent<InventarioJugador>().PocionVidaDisponible) {
+				Debug.Log("Pocion armadura usada");
+				GetComponent<InventarioJugador>().PocionVidaDisponible = false;
+			} else {
+				Debug.Log("Pocion no disponible");
+			}
+			break;
+			default:
+			break;
+		}
+	}
+
+	public void agregarPocion(int tipo){
+				switch (tipo)
+		{
+			case 1:
+			GetComponent<InventarioJugador>().PocionVidaDisponible = true;
+			break;
+			case 2:
+			GetComponent<InventarioJugador>().PocionDannoDisponible = true;
+			break;
+			case 3:
+			GetComponent<InventarioJugador>().PocionArmaduraDisponible = true;
+			break;
+			default:
+			break;
+		}
+	}
+
 	private void Update() {
 		MaquinaEstado.estadoActual.ActualizarCuadro();
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+			tomarPocion(1);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha2)) {
+			tomarPocion(2);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3)) {
+			tomarPocion(3);
+		}
 	}
 	
 

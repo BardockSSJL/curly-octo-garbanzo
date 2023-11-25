@@ -32,7 +32,14 @@ namespace Pociones
         {
         if (collision.gameObject.tag == "Jugador")
         {
-            Debug.Log("recoger");
+            // TODO: Verificar ids
+            if (id=="Vida"){
+                collision.gameObject.GetComponent<Jugador>().agregarPocion(1);
+            } else if (id=="Armadura"){
+                collision.gameObject.GetComponent<Jugador>().agregarPocion(3);
+            } else if (id=="Dano"){
+                collision.gameObject.GetComponent<Jugador>().agregarPocion(1);
+            }
             Destroy(gameObject);
         }
         }
