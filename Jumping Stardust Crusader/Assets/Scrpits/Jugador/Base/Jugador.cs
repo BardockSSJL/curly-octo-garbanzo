@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {  
+	[field:SerializeField] public float tiempoRestanteDanno { get; set; } = 0;
+	[field:SerializeField] public float tiempoRestanteArmadura { get; set; } = 0;
+
     [field: SerializeField] public float vidaMaxima{ get; set; } = 100f;
 
 	[field: SerializeField] public float vidaActual{ get; set; }
@@ -58,7 +61,7 @@ public class Jugador : MonoBehaviour
 	[field: SerializeField] public float dañoAtaque{ get; set; } = 25f;
 
 	public void RecibirDanno(float cantidad){
-		vidaActual -= cantidad;
+		vidaActual -= tiempoRestanteArmadura > 0 ? cantidad / 2 : cantidad;
 	}
 
 	#endregion
@@ -107,17 +110,19 @@ public class Jugador : MonoBehaviour
 			}
 			break;
 			case 2:
-			if(GetComponent<InventarioJugador>().PocionVidaDisponible) {
+			if(GetComponent<InventarioJugador>().PocionDannoDisponible) {
 				Debug.Log("Pocion daño usada");
-				GetComponent<InventarioJugador>().PocionVidaDisponible = false;
+				GetComponent<InventarioJugador>().PocionDannoDisponible = false;
+				tiempoRestanteDanno = 10;
 			} else {
 				Debug.Log("Pocion no disponible");
 			}
 			break;
 			case 3:
-			if(GetComponent<InventarioJugador>().PocionVidaDisponible) {
+			if(GetComponent<InventarioJugador>().PocionArmaduraDisponible) {
 				Debug.Log("Pocion armadura usada");
-				GetComponent<InventarioJugador>().PocionVidaDisponible = false;
+				GetComponent<InventarioJugador>().PocionArmaduraDisponible = false;
+				tiempoRestanteArmadura = 10;
 			} else {
 				Debug.Log("Pocion no disponible");
 			}
@@ -154,6 +159,14 @@ public class Jugador : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha3)) {
 			tomarPocion(3);
+		}
+
+		if (tiempoRestanteDanno > 0) {
+			tiempoRestanteDanno -= Time.deltaTime;
+		}
+
+		if (tiempoRestanteArmadura > 0) {
+			tiempoRestanteArmadura -= Time.deltaTime;
 		}
 	}
 	

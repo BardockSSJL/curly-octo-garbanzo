@@ -52,7 +52,7 @@ public class AtaqueEstado : PlayerState {
             // Obtenga los enemigos que están en el collider de la espada
 		    hitCount = hitBoxEspada.OverlapCollider(contacto, colliders);
             for (int i = 0; i < hitCount; i++) {
-                colliders[i].GetComponent<Enemy>().dannar(jugador.dañoAtaque);
+                colliders[i].GetComponent<Enemy>().dannar(jugador.tiempoRestanteDanno > 0 ?  jugador.dañoAtaque * 2 : jugador.dañoAtaque);
                 // Guarde a qué enemigo a golpeado
                 hitEnemies.Add(colliders[i].GetComponent<Enemy>());
             }

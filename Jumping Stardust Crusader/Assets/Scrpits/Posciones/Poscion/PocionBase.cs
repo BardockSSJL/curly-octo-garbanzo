@@ -38,7 +38,7 @@ namespace Pociones
             } else if (id=="Armadura"){
                 collision.gameObject.GetComponent<Jugador>().agregarPocion(3);
             } else if (id=="Dano"){
-                collision.gameObject.GetComponent<Jugador>().agregarPocion(1);
+                collision.gameObject.GetComponent<Jugador>().agregarPocion(2);
             }
             Destroy(gameObject);
         }
