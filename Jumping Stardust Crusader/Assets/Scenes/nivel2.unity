@@ -1167,17 +1167,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dispensador (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3626694500579510006, guid: cd217291298a83b4aa1622f0f93a6086, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3626694500579510007, guid: cd217291298a83b4aa1622f0f93a6086, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3626694500579510007, guid: cd217291298a83b4aa1622f0f93a6086, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.92
+      value: 48.51
       objectReference: {fileID: 0}
     - target: {fileID: 3626694500579510007, guid: cd217291298a83b4aa1622f0f93a6086, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 3626694500579510007, guid: cd217291298a83b4aa1622f0f93a6086, type: 3}
       propertyPath: m_LocalPosition.z
