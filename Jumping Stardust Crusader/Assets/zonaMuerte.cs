@@ -9,7 +9,7 @@ public class zonaMuerte : MonoBehaviour
     {
         if(colision.gameObject.tag == "Jugador"){
             
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

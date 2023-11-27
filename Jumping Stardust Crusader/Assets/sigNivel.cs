@@ -8,7 +8,7 @@ public class sigNivel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D colision)
     {
         if(colision.gameObject.tag == "Jugador"){
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

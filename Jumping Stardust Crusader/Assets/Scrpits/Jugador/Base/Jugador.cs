@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {  
@@ -71,6 +72,10 @@ public class Jugador : MonoBehaviour
     public bool salto = false;
 
 	public Animator animator;
+
+	public void morir() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
 
     private void Awake() {
 		MaquinaEstado = new PlayerStateMachine();
@@ -167,6 +172,10 @@ public class Jugador : MonoBehaviour
 
 		if (tiempoRestanteArmadura > 0) {
 			tiempoRestanteArmadura -= Time.deltaTime;
+		}
+
+		if(vidaActual <= 0) {
+			morir();
 		}
 	}
 	
