@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1f24cd50b91db4bb0eedee3908fca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventarioJugador: {fileID: 0}
+  inventarioJugador: {fileID: 500844894}
 --- !u!114 &451050857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,8 +1806,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500844893}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.21, y: -4.34, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.210022, y: -4.3399963, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bde22f93d07a9449a4951bcd02a1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 0}
+  jugador: {fileID: 500844896}
   BarraVidaMax: {fileID: 207082199}
   BarraVidaActual: {fileID: 199387444}
 --- !u!1 &950516264
@@ -3216,7 +3216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  player: {fileID: 0}
+  player: {fileID: 500844900}
 --- !u!114 &1942295682
 MonoBehaviour:
   m_ObjectHideFlags: 0
