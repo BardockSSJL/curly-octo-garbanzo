@@ -18,7 +18,7 @@ public class PuzzleEleccion : MonoBehaviour, IPuzzle
         opcion1.opcionCorrecta = false;
         opcion2.opcionCorrecta = false;
         opcion3.opcionCorrecta = false;
-        int opcionCorrecta = ((int)DateTime.Now.Millisecond) % 3;
+        int opcionCorrecta = 2;
         switch (opcionCorrecta)
         {
             case 0:
